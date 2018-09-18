@@ -2,20 +2,45 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Chapitre 1</title>
+    <title>La galerie de Camille</title>
+    <!-- Les fichiers CSS qui donnent un peu de style à notre page. Attention ce
+    fichier CSS est hebergé "ailleurs" est référencé avec un chemin absolu -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Chapitre 1</h1>
 
-    <p>Aliquam erat volutpat. Morbi gravida velit nisl. Duis facilisis aliquam nisi, ut auctor metus. Curabitur ex diam, mollis at odio sit amet, posuere hendrerit massa. Cras mi nisl, gravida quis orci sed, consequat sagittis est. Mauris ante magna, sagittis sit amet maximus nec, accumsan non urna. Aenean eget ipsum pretium, pretium tortor non, aliquet elit. Phasellus tempor quam ante, id scelerisque felis commodo et. Nulla vehicula sodales sapien vel scelerisque. Duis vestibulum a lacus in euismod. Etiam tincidunt elementum mattis. Nulla iaculis pellentesque consectetur.</p>
+    <div class="container my-4">
+      <h1>La galerie de Camille</h1>
+      <!-- Ce block avec pour id "app" sert à créer une galerie -->
+      <div id="app">
+        <carousel-3d>
+          <!-- Pour ajouter une photo à cette galerie il faut ajouter une
+          balise <slide> contenant une <img>. Chaque slide doit avoir
+          un index different. -->
+          <slide :index="0">
+            <a href="http://www.sasso.fr/photos/genetique-reproducteurs-t55-poulets-peau-pattes-blanches-pour-label-rouge-fermiers-biologiques-detoure-250p.png" target="_blank">
+            <img src="http://www.sasso.fr/photos/genetique-reproducteurs-t55-poulets-peau-pattes-blanches-pour-label-rouge-fermiers-biologiques-detoure-250p.png" alt= "un poulet debout" />
+            </a>
+          </slide>
+          <slide :index="1">
+            <a href="https://pbs.twimg.com/profile_images/743961962585919488/h0b2kMQm_400x400.jpg" target="_blank">
+            <img src="https://pbs.twimg.com/profile_images/743961962585919488/h0b2kMQm_400x400.jpg" alt= "un poulet et son oeuf"/>
+          </a>
+          </slide>
+          <slide :index="2">
+             <a href="https://pbs.twimg.com/media/CpSttn4UkAAeIMw.jpg:large" target="_blank">
+            <img src="https://pbs.twimg.com/media/CpSttn4UkAAeIMw.jpg:large" alt="un poulet qui flotte" />
+          </a>
+          </slide>
+        </carousel-3d>
+      </div>
+    </div>
 
-    <ul>
-      <li>
-        <a href="chapitre-2.html">Chapitre suivant</a>
-      </li>
-      <li>
-        <a href="../index.html">Retour au sommaire</a>
-      </li>
-    </ul>
+    <!-- Les fichiers javascript qui permettent au carousel de fonctionner. Ces
+    fichier JS sont référencés avec des chemins relatifs. Si vous devez les référencer
+    dans un fichier depuis un autre dossier, pensez à mettre à jour ces chemins. -->
+    <script src="../vendors/vue.min.js"></script>
+    <script src="../vendors/vue-carousel-3d.min.js"></script>
+    <script src="../gallery.js"></script>
   </body>
 </html>
